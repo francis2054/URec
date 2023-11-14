@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# STILL IN UNTESTED STAGE
+# Seems to break desktop environment at upgrade stage, unsure if this is because of live test environment or not
+
 read -p "Press enter to start installation of DWagent"
 cd ~
 cd Downloads
