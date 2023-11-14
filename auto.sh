@@ -5,9 +5,7 @@ cd Downloads
 wget https://www.dwservice.net/download/dwagent.sh
 chmod +x dwagent.sh
 sudo ./dwagent.sh
-read -p "Press enter to add DMDE to path"
-echo -e "alias dmde='/home/$USER/dmde/dmde\nexport PATH=/home/$USER/bin:$PATH" >> /home/$USER/.bashrc
-echo "DMDE Installation done"
+echo "DWagent Installation done"
 read -p "Starting apfs-fuse installation in 2 seconds" -t 2
 echo "Installing apfs-fuse"
 cd
@@ -28,6 +26,7 @@ sudo cp -a . /usr/local/bin
 echo "Installation done"
 read -p "Creating DMDE shortcut" -t 3
 cd /home/$USER/dmde
+sudo rm -f logo.png
 wget https://i.imgur.com/BRQ3STJ.png
 mv BRQ3STJ.png logo.png
 echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=/home/$USER/dmde/logo.png\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
@@ -46,3 +45,7 @@ sudo dpkg -i opensuperclone_2.4.1-1_amd64.deb
 echo "OSC Installation done"
 read -p "Adding OSC to favourites" -t 2
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'opensuperclone.desktop']"
+read -p "Starting installation of DMDE, press enter to open DMDE website to start manual installation of DMDE"
+firefox "https://dmde.com/download.html/"
+read -p "Press enter to add DMDE to path after installation is done"
+echo -e "alias dmde='/home/$USER/dmde/dmde\nexport PATH=/home/$USER/bin:$PATH" >> /home/$USER/.bashrc
