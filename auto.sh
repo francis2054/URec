@@ -26,8 +26,23 @@ make
 read -p "Installation of apfs-fuse complete, copying apfs-fuse to executable location" -t 2
 sudo cp -a . /usr/local/bin
 echo "Installation done"
-read -p "Creating DMDE desktop shortcut and sets it up" -t 3
-cd
-cd Desktop
-https://i.imgur.com/BRQ3STJ.png
-echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
+read -p "Creating DMDE shortcut" -t 3
+cd /home/$USER/dmde
+wget https://i.imgur.com/BRQ3STJ.png
+mv BRQ3STJ.png logo.png
+echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=/home/$USER/dmde/logo.png\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
+read -p "Adding it to favourites" -t 2
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'dmde.desktop']"
+read -p "Verifying things are not broken" -t 2
+sudo apt-get install build-essentials -y
+sudo apt --fix-broken install -y
+read -p "Cleaning up" -t 1
+sudo apt autoremove -y
+read -p "Starting installation of OSC" -t 3
+cd ~
+cd Downloads
+wget https://github.com/ISpillMyDrink/OpenSuperClone/releases/download/v2.4.1/opensuperclone_2.4.1-1_amd64.deb
+sudo dpkg -i opensuperclone_2.4.1-1_amd64.deb
+echo "OSC Installation done"
+read -p "Adding OSC to favourites" -t 2
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'opensuperclone.desktop']"
