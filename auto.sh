@@ -26,5 +26,8 @@ make
 read -p "Installation of apfs-fuse complete, copying apfs-fuse to executable location" -t 2
 sudo cp -a . /usr/local/bin
 echo "Installation done"
-read -p "Adding DMDE desktop shortcut to favourites" -t 3
+read -p "Creating DMDE desktop shortcut and sets it up" -t 3
+cd
+cd Desktop
+https://i.imgur.com/BRQ3STJ.png
 echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
