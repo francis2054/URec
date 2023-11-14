@@ -9,6 +9,9 @@ cd Downloads
 wget https://www.dwservice.net/download/dwagent.sh
 chmod +x dwagent.sh
 sudo ./dwagent.sh
+
+# To-Do: continue the setup of dwservice on a separate user
+
 echo "DWagent Installation done"
 read -p "Starting apfs-fuse installation in 2 seconds" -t 2
 echo "Installing apfs-fuse"
