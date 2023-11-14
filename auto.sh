@@ -23,14 +23,6 @@ make
 read -p "Installation of apfs-fuse complete, copying apfs-fuse to executable location" -t 2
 sudo cp -a . /usr/local/bin
 echo "Installation done"
-read -p "Creating DMDE shortcut" -t 3
-cd /home/$USER/dmde
-sudo rm -f logo.png
-wget https://i.imgur.com/BRQ3STJ.png
-mv BRQ3STJ.png logo.png
-echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=/home/$USER/dmde/logo.png\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
-read -p "Adding it to favourites" -t 2
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'dmde.desktop']"
 read -p "Verifying things are not broken" -t 2
 sudo apt-get install build-essentials -y
 sudo apt --fix-broken install -y
@@ -48,3 +40,11 @@ read -p "Starting installation of DMDE, press enter to open DMDE website to star
 firefox "https://dmde.com/download.html/"
 read -p "Press enter to add DMDE to path after installation is done"
 echo -e "alias dmde='/home/$USER/dmde/dmde\nexport PATH=/home/$USER/bin:$PATH" >> /home/$USER/.bashrc
+read -p "Creating DMDE shortcut" -t 3
+cd /home/$USER/dmde
+sudo rm -f logo.png
+wget https://i.imgur.com/BRQ3STJ.png
+mv BRQ3STJ.png logo.png
+echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=/home/$USER/dmde/logo.png\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
+read -p "Adding it to favourites" -t 2
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'dmde.desktop']"
