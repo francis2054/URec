@@ -1,4 +1,6 @@
-# UbuntuRecovery
+## UbuntuRecovery
+
+# WIP (will probably not work for you)
 
 ## To use this:
 Download the `initate.sh` script and run it with `sudo ./intiate.sh`.
