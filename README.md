@@ -1,7 +1,8 @@
 # UbuntuRecovery
 
 ## To use this:
-Download the `initate.sh` script and run it with `sudo ./intiate.sh`
+Download the `initate.sh` script and run it with `sudo ./intiate.sh`.
+`initate.sh` will download and execute auto.sh
 
 ### DMDE
 https://dmde.com/download.html
