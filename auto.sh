@@ -51,6 +51,6 @@ sudo rm -f logo.png
 wget https://i.imgur.com/BRQ3STJ.png
 mv BRQ3STJ.png logo.png
 touch /home/$USER/.local/share/applications/dmde.desktop
-echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=/home/$USER/dmde/logo.png\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\GenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
+echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=1.0\nTerminal=false\nIcon=/home/$USER/dmde/logo.png\nExec="/home/$USER/dmde/dmde"\nCategories=Application\nName=DMDE\nGenericName=DMDERECOVERY" >> /home/$USER/.local/usr/applications/dmde.desktop
 read -p "Adding it to favourites" -t 2
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'dmde.desktop']"
