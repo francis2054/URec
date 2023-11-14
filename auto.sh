@@ -7,7 +7,6 @@ chmod +x dwagent.sh
 sudo ./dwagent.sh
 read -p "Press enter to add DMDE to path"
 echo -e "alias dmde='/home/$USER/dmde/dmde\nexport PATH="/home/$USER/bin:$PATH" >> /home/$USER/.bashrc
-read -p "Press enter to add DMDE to path"
 echo "DMDE Installation done"
 read -p "Starting apfs-fuse installation in 2 seconds" -t 2
 echo "Installing apfs-fuse"
