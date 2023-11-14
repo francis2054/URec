@@ -1,3 +1,4 @@
+#!/bin/bash
 read -p "Press enter to start installation of DWagent"
 cd ~
 cd Downloads
