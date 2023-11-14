@@ -10,6 +10,7 @@ read -p "Starting apfs-fuse installation in 2 seconds" -t 2
 echo "Installing apfs-fuse"
 cd
 sudo apt update
+sudo apt upgrade -y
 sudo apt install fuse libfuse3-dev bzip2 libbz2-dev cmake gcc git libattr1-dev zlib1g-dev -y
 sudo apt-get install "c++" -y 
 git clone https://github.com/sgan81/apfs-fuse.git
